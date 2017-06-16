@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--remark：根布局背景色与图片颜色一致-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shake"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    tools:context="com.a720.shake.com.michael.shake.ShakeActivity">
+
+    <!--desc：主布局包含上下层（分割线与图片）、中心显示图片，通过动画控制上下层位移变化及分割线显示-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--摇一摇打开后中心图片-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <!--上下分割线与图片控制区域-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--顶部分割线与图片-->
+            <LinearLayout
+                android:id="@+id/main_linear_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/main_shake_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/shake_top" />
+
+                <ImageView
+                    android:id="@+id/main_shake_top_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/shake_top_line" />
+            </LinearLayout>
+
+            <!--底部分割线与图片-->
+            <LinearLayout
+                android:id="@+id/main_linear_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/main_shake_bottom_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/shake_bottom_line" />
+
+                <ImageView
+                    android:id="@+id/main_shake_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/shake_bottom" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
